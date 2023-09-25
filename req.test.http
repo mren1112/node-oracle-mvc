@@ -1,0 +1,53 @@
+
+@baseurl = http://localhost
+
+@baseurl2 = http://uat.ru.ac.th:8115
+@port = 3555
+
+
+@url = {{baseurl}}:{{port}}
+ 
+GET {{url}} HTTP/1.1
+###
+ 
+GET {{url}}/api/test HTTP/1.1 
+### 
+
+GET {{url}}/api/getselectdb/2565/1/2566 HTTP/1.1
+###
+
+GET {{url}}/api/select HTTP/1.1
+###
+ 
+ 
+###
+GET  {{url}}/api/select HTTP/1.1
+Content-Type: application/json
+
+{
+    "STUDY_YEAR": "2566",
+    "STUDY_SEMESTER": "1",
+    "FISCAL_YEAR": "2566"
+}
+
+###
+
+POST {{url}}/api/postinsertdb HTTP/1.1
+Content-Type: application/json
+
+{
+    "STUDY_YEAR": "2565",
+    "STUDY_SEMESTER": "1",
+    "FISCAL_YEAR": "2566"
+}
+###
+
+
+POST {{url}}/tt HTTP/1.1
+Content-Type: application/json
+
+{
+    "STUDY_YEAR": "2565",
+    "STUDY_SEMESTER": "1",
+    "FISCAL_YEAR": "2566"
+}
