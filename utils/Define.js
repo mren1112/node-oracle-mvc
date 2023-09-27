@@ -23,7 +23,7 @@ const Define = {
     MINUTES: "minutes",
     SECONDS: "seconds",
     //token expiration
-    
+    client_id: "",
     EXPIRE_TIME: '3600s',
 }
 

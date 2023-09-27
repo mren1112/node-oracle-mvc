@@ -1,4 +1,4 @@
-const generateConfig = (url, accessToken) => {
+const AuthorizationConfig = (url, accessToken) => {
     return {
       method: "get",
       url: url,
@@ -9,4 +9,4 @@ const generateConfig = (url, accessToken) => {
     };
   };
   
-  module.exports = { generateConfig };
+  module.exports = { AuthorizationConfig };

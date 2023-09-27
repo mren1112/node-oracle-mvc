@@ -27,8 +27,8 @@ Error.stackTraceLimit = 50;
 class getSelect {
     static async getSelectdb(req, res) {
 
-        const { STUDY_SEMESTER } = req.body;
-        console.log(STUDY_SEMESTER);
+        const { STUDY_YEAR,STUDY_SEMESTER,FISCAL_YEAR } = req.body;
+        console.log(STUDY_YEAR,STUDY_SEMESTER,FISCAL_YEAR);
 
         let sql = `SELECT FISCAL_YEAR,STUDY_YEAR,STUDY_SEMESTER,COUNTER_NO,
         to_char(START_DATE,'dd/mm/yyyy','NLS_CALENDAR=''THAI BUDDHA'' NLS_DATE_LANGUAGE=THAI')START_DATE,

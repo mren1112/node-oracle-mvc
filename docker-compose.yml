@@ -1,0 +1,31 @@
+version: "3.4"
+services:
+  crud-oracle-mvc:
+    restart: always
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: crud-oracle-mvc:1.0.0
+    # container_name: crud-oracle-mvc
+    ports:
+      - 3555:3555
+    networks:
+      compose_network:
+    # volumes:
+    # - "/var/log/test/:/var/log/test/"
+    # - "/etc/localtime:/etc/localtime:ro"
+    # - "/etc/timezone:/etc/timezone:ro"
+    environment:
+     NODE_ENV: production
+      - TZ=Asia/Bangkok
+      #- LD_LIBRARY_PATH=/usr/lib/instantclient
+      #- LD_LIBRARY_PATH=/usr/lib/instantclient:$LD_LIBRARY_PATH
+      #- PATH=/usr/lib/instantclient
+
+networks:
+   compose_network:
+     name: compose_network
+#     ipam:
+#       driver: default
+#       config:
+#         - subnet: 192.168.3.1/26

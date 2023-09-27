@@ -16,10 +16,42 @@ GET {{url}}/api/test HTTP/1.1
 GET {{url}}/api/getselectdb/2565/1/2566 HTTP/1.1
 ###
 
-GET {{url}}/api/select HTTP/1.1
+GET {{url}}/api/selectp HTTP/1.1
+###
+
+GET {{url}}/api/testpool HTTP/1.1
 ###
  
+GET {{url}}/api/closepool HTTP/1.1
+###
  
+POST {{url}}/api/insertdb HTTP/1.1
+Content-Type: application/json
+
+{
+    "STUDY_SEMESTER": "5",
+    "STUDY_YEAR": "2665" 
+}
+###
+
+PUT  {{url}}/api/updatedb HTTP/1.1
+Content-Type: application/json
+
+{
+    "val": "444",
+    "STUDY_YEAR": "2569" 
+}
+###
+
+DELETE {{url}}/api/deletedb HTTP/1.1
+Content-Type: application/json
+
+{
+    "STUDY_SEMESTER": "1",
+    "STUDY_YEAR": "2569" 
+}
+###
+
 ###
 GET  {{url}}/api/select HTTP/1.1
 Content-Type: application/json
@@ -43,11 +75,26 @@ Content-Type: application/json
 ###
 
 
-POST {{url}}/tt HTTP/1.1
+POST {{url}}/api/doc/sign HTTP/1.1
 Content-Type: application/json
 
 {
-    "STUDY_YEAR": "2565",
+    "client_id": "admin",
+    "seclete_id": "4c013892f7d8f50e39fbe513e681d4970b3901f7b5dc04dce7c533d09cc95bf15425ca2abbd90ed8a22a8267a84e3d32ef26688586d96d1faa572e59ee9a8c03" 
+}
+###
+
+
+GET  {{url}}/api/select HTTP/1.1
+Content-Type: application/json 
+
+{
+    "client_id": "admin",
+    "seclete_id": "4c013892f7d8f50e39fbe513e681d4970b3901f7b5dc04dce7c533d09cc95bf15425ca2abbd90ed8a22a8267a84e3d32ef26688586d96d1faa572e59ee9a8c03", 
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOiJhZG1pbiIsImlhdCI6MTY5NTcwNjUzNCwiZXhwIjoxNjk1NzEwMTM0fQ.8MAHTlp_Ee0AFdgs1ic7uB3O0k2zxSZl0uU5byXRR5U",
+    
+    "STUDY_YEAR": "2566",
     "STUDY_SEMESTER": "1",
     "FISCAL_YEAR": "2566"
+
 }
