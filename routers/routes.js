@@ -29,10 +29,11 @@ router.get('/selectp', selectdb.getSelect.getSelectdb);
 router.post('/insertdb', InsertDataController.insertdb);
 router.put('/updatedb', UpdateDataController.updatedb);
 router.delete('/deletedb', DeleteDataController.deletedb);
- 
+
 router.get('/testpool', SelectDataController.getSelectdb);
 //----------------------------------------------------------------
 
+router.post('/test', test.selectParams);
 // verify token 
 //router.get('/verify', bodyParser,getAccessToken.verifyAccessToken,);
 

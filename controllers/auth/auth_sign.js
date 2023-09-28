@@ -1,4 +1,4 @@
-const Response = require("../../models/Response/Response");
+const Response = require("../../models/response/Response");
 const Helper = require('../../utils/Helper');
 
 

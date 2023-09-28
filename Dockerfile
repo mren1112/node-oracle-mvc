@@ -1,11 +1,13 @@
-FROM keymetrics/pm2:latest-alpine
-# FROM node:lts-alpine
+# FROM keymetrics/pm2:latest-alpine
+FROM node:lts-alpine
 ENV NODE_ENV=production
 WORKDIR /usr/src/app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 # RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-RUN npm install --production
+RUN npm install --production --silent && mv node_modules ../
+# RUN npm install --production
 RUN npm install -g npm@10.1.0
+
 COPY . .
 RUN ls -lh
 RUN mv instantclient /usr/lib/instantclient
@@ -40,5 +42,5 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 USER node
 EXPOSE 3555
 # RUN pm2 install pm2-logrotate
-CMD ["pm2-runtime","npm", "start", "--env", "production"]
+CMD ["npm", "start"]
 # CMD ["pm2-runtime", "start", "system_prod.config.js", "--env", "production"]

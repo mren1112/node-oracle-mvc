@@ -2,7 +2,7 @@ require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const moment = require('moment');
 const Define = require('./Define');
-const Response = require('../models/Response/Response');
+const Response = require('../models/response/Response');
 
 const Helper = {
     //@get a date after 1 day @return miliseconds

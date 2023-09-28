@@ -7,8 +7,9 @@
 /bazel-out
 
 # dependencies
-node_modules
-.env
+/node_modules/
+/.env
+/instantclient
 
 # profiling files
 chrome-profiler-events*.json

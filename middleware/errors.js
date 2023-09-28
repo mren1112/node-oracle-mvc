@@ -1,4 +1,4 @@
-const Response = require("../../models/Response");
+const Response = require("../models/response/Response");
 
 const error_mid = (e, req, res, next) => {
     console.log("milon", e.code);

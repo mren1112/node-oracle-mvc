@@ -2,7 +2,7 @@
  * @auth by client id and access token
  */
 
-const Response = require('../models/Response');
+const Response = require('../../models/response/Response');
 const Helper = require('../utils/Helper');
 const auth_mid = (req, res, next) => {
     try {
